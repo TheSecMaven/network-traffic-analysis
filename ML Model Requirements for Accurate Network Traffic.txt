@@ -22,6 +22,10 @@ ML Model Requirements for Accurate Network Traffic Analysis
 		-2 flags for this, one to say yes we have seen this IP, another to say was the traffic classified malicious or benign. 
 		-If Attacker Address starts with 169.198, then there should be something to denote we saw this on our own network (Flag?)
 
-Total Feature Count: 6
+-Request URL
+	-Maintain a list of known malicious domains. When we have a match, that is something malicious. If not, it needs to be evaluated. 
+		-IF request URL, Flag on, and check list?
+
+Total Feature Count: 7
 
 Clustering/Decision Tree will work best most likely
