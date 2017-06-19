@@ -1,0 +1,27 @@
+ML Model Requirements for Accurate Network Traffic Analysis
+
+
+
+-Correlated Event Count
+	-Can be used to determine a couple of things happened versus a potential DOS Attack (Model needs to know what a DOS attack looks like?)
+
+-Category Behavior
+	-Execute/ Responses will be treated differently from Communicate/Query.
+
+-Category Outcome
+	-3 States (0,1,2) Failure, Attempt, Success. Will also assist in understanding severity. 
+
+-Category Significance
+	-Perhaps clustering will prove instrumental in this model, in which case the categorization (, Recon, Informational, Suspicious) will help in determination of malicious or benign.
+
+-Target Port (Active or Not)
+	-If there is a specified target port, set flag to 1 so the model knows this was targeting a port. If Port is 80/443/22 do we set to different flag? Will that help?
+
+-Attacker Address
+	-Needs to be used in the sense, have we seen this IP before, and what did we say about the traffic from this IP in the past. Cannot be used to make assumptions about ranges of IPs neccesarily
+		-2 flags for this, one to say yes we have seen this IP, another to say was the traffic classified malicious or benign. 
+		-If Attacker Address starts with 169.198, then there should be something to denote we saw this on our own network (Flag?)
+
+Total Feature Count: 6
+
+Clustering/Decision Tree will work best most likely
